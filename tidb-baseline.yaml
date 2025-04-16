@@ -1,0 +1,23 @@
+global:
+  user: "tidb"                # 部署用户（需提前创建）
+  deploy_dir: "/tidb-deploy"  # 部署目录
+  data_dir: "/tidb-data"      # 数据目录
+
+pd_servers:
+  - host: 10.2.106.144
+    name: "pd-1"
+    client_port: 2349         # PD 客户端端口
+    peer_port: 2350           # PD 节点间通信端口
+
+tidb_servers:
+  - host: 10.2.106.144
+    port: 4010                # TiDB 服务端口
+    status_port: 10090        # TiDB 状态端口
+    config:
+      log.level: "error"
+
+tikv_servers:
+  - host: 10.2.106.144
+    port: 20161               # TiKV 服务端口
+    status_port: 20181        # TiKV 状态端口
+

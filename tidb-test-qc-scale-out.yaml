@@ -1,0 +1,4 @@
+tidb_servers:
+  - host: 10.2.106.144
+    port: 4030                # TiDB 服务端口
+    status_port: 10120        # TiDB 状态端口

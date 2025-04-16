@@ -1,0 +1,34 @@
+global:
+  user: "tidb"                # 部署用户（需提前创建）
+  deploy_dir: "/tidb-test-qc-deploy"  # 部署目录
+  data_dir: "/tidb-test-qc-data"      # 数据目录
+
+pd_servers:
+  - host: 10.2.106.144
+    name: "pd"
+    client_port: 2379         # PD 客户端端口
+    peer_port: 2380           # PD 节点间通信端口
+
+tidb_servers:
+  - host: 10.2.106.144
+    port: 4030                # TiDB 服务端口
+    status_port: 10120        # TiDB 状态端口
+
+tikv_servers:
+  - host: 10.2.106.144
+    port: 20182               # TiKV 服务端口
+    status_port: 20192        # TiKV 状态端口
+    config:
+      log.level: "error"
+
+monitored:
+  node_exporter_port: 9110
+  blackbox_exporter_port: 9125
+
+monitoring_servers:
+  - host: 10.2.106.144
+    ng_port: 14020
+    port: 9290
+grafana_servers:
+  - host: 10.2.106.144
+    port: 3200
