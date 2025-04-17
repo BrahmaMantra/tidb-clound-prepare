@@ -1,0 +1,8 @@
+monitoring_servers:
+  - host: 10.2.106.144
+    port: 9390
+grafana_servers:
+  - host: 10.2.106.144
+    port: 3300
+
+  
